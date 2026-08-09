@@ -6,7 +6,7 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint src/**/*.js",
-    "start": "node --dns-result-order=ipv4first --env-file=.env ./src/index.js",
+    "start": "node --dns-result-order=ipv4first ./src/index.js",
     "dev": "nodemon --dns-result-order=ipv4first --env-file=.env src/index.js"
   },
   "repository": {

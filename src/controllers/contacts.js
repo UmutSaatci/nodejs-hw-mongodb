@@ -1,4 +1,4 @@
-import createHttpError from 'http-errors';
+import { HttpError } from '../middlewares/errorHandler.js';
 import { getAllContacts, getContactByID } from '../services/contacts.js';
 
 export const getContactsController = async (req, res, next) => {
@@ -21,8 +21,8 @@ export const getContactsByIdController = async (req, res, next) => {
     const contact = await getContactByID(contactId);
 
     if (!contact) {
-      // 2. Hata oluşturup ayarlıyoruz
-      throw createHttpError(404, 'Contact not found');
+      next(new HttpError(404, 'Contact not found'));
+      return;
     }
 
     res.status(200).json({

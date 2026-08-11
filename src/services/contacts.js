@@ -26,13 +26,15 @@ export const updateContact = async (contactId, payload, options = {}) => {
 
   if (!result || !result.value) return null;
 
-  return {
-    contact: result.value,
-    isNew: Boolean(result?.lastErrorObject?.upserted),
-  };
+  return result.value;
 };
 
-export const deleteContact = async (contactId) => {
-  const result = await ContactsCollection.findOneAndDelete(contactId);
+export const deleteContact = async (contactId, options = {}) => {
+  const result = await ContactsCollection.findOneAndDelete(
+    { _id: contactId },
+    options,
+  );
+  if (!result) return null;
+
   return result;
 };

@@ -1,7 +1,7 @@
 import httpErrors from 'http-errors';
 
 export const errorHandler = (err, req, res, next) => {
-  // 🚀 Fırlatılan hatanın bir http-errors nesnesi olup olmadığını kontrol ediyoruz
+  // Fırlatılan hatanın bir http-errors nesnesi olup olmadığını kontrol ediyoruz
   if (httpErrors.isHttpError(err)) {
     return res.status(err.status).json({
       status: err.status,

@@ -28,5 +28,4 @@ setupServer.use(contactsRouter);
 setupServer.use(notFoundHandler);
 setupServer.use(errorHandler);
 
-// app nesnesini dışarı aktarıyoruz
 export default setupServer;

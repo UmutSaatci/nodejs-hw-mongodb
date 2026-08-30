@@ -19,6 +19,11 @@ const contactsSchema = new Schema(
       enum: ['work', 'home', 'personal'],
       default: 'personal',
     },
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: 'users',
+      required: true,
+    },
     isFavourite: {
       type: Boolean,
       default: false,
@@ -30,4 +35,4 @@ const contactsSchema = new Schema(
   },
 );
 
-export const ContactsCollection = model('Contacts', contactsSchema);
+export const ContactsCollection = model('contacts', contactsSchema);

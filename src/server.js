@@ -28,9 +28,8 @@ setupServer.get('/', (req, res) => {
 });
 setupServer.use('/auth', authRouter);
 setupServer.use('/contacts', contactsRouter);
-
+setupServer.use('/uploads', express.static(UPLOAD_DIR));
 setupServer.use(notFoundHandler);
 setupServer.use(errorHandler);
-setupServer.use('/uploads', express.static(UPLOAD_DIR));
 
 export default setupServer;

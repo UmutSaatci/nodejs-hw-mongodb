@@ -1,0 +1,30 @@
+tags:
+  - Auth
+
+summary: Login user
+description: Authenticates a user and creates a new session.
+
+operationId: loginUser
+
+security: []
+
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: ../../../components/schemas/user-login.yaml
+
+responses:
+  '200':
+    description: User successfully logged in
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/login-response.yaml
+
+  '400':
+    description: Invalid request
+
+  '401':
+    $ref: ../../../components/responses/401-login.yaml

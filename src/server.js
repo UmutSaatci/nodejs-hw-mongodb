@@ -10,7 +10,7 @@ import { notFoundHandler } from './middlewares/notFoundHandler.js';
 import contactsRouter from './routers/contacts.js';
 import authRouter from './routers/auth.js';
 import { UPLOAD_DIR } from './constants/index.js';
-
+import { swaggerDocs } from './middlewares/swaggerDocs.js';
 const setupServer = express();
 
 setupServer.use(express.json());
@@ -26,6 +26,8 @@ setupServer.use(
 setupServer.get('/', (req, res) => {
   res.json({ message: 'Contacts Sunucumuz Çalışıyor!' });
 });
+
+swaggerDocs(setupServer);
 setupServer.use('/auth', authRouter);
 setupServer.use('/contacts', contactsRouter);
 setupServer.use('/uploads', express.static(UPLOAD_DIR));

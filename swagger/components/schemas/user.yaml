@@ -1,0 +1,25 @@
+type: object
+
+properties:
+  id:
+    type: string
+    example: 66e9a1b8c5f123456789abcd
+
+  name:
+    type: string
+    example: Umut Saatci
+
+  email:
+    type: string
+    format: email
+    example: umut@example.com
+
+  createdAt:
+    type: string
+    format: date-time
+    example: '2026-09-18T16:30:00.000Z'
+
+  updatedAt:
+    type: string
+    format: date-time
+    example: '2026-09-18T16:30:00.000Z'

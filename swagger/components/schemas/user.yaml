@@ -14,13 +14,6 @@ properties:
     format: email
     example: umut@example.com
 
-  role:
-    type: string
-    enum:
-      - teacher
-      - parent
-    example: parent
-
   createdAt:
     type: string
     format: date-time
